@@ -9,6 +9,9 @@ import PCIDSS from "./pages/PCIDSS";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 
+import ThirdPartyRisk from "./pages/ThirdPartyRisk";
+
+
 export default function App() {
   return (
     <>
@@ -56,48 +59,159 @@ export default function App() {
                   </div>
                 </div>
               </section>
+{/* THIRD-PARTY RISK MANAGEMENT */}
+<section className="py-24 bg-white px-6">
+  <div className="max-w-6xl mx-auto text-center">
+
+    <h2 className="text-[34px] font-semibold tracking-tight text-gray-900 mb-4">
+      End-to-End Third-Party Risk Management
+    </h2>
+
+    <p className="text-[17px] text-gray-600 max-w-3xl mx-auto mb-16 leading-relaxed">
+      We help organizations design, scale, and operationalize robust third-party risk
+      programs aligned with regulatory expectations and enterprise best practices.
+    </p>
+
+    <div className="grid md:grid-cols-2 gap-10 text-left">
+
+      {[
+        "Implement a World-Class TPRM Program",
+        "Conduct Inherent Risk Assessments",
+        "Onboard New Vendors Faster",
+        "Eliminate Due Diligence Backlog",
+        "Assess Hard-to-Assess Third Parties",
+        "Respond to Emerging Threats",
+        "Comply with Global Risk Regulations",
+        "AI-Based Control Reviews",
+      ].map((item, idx) => (
+        <div
+          key={idx}
+          className="flex items-center justify-between border border-gray-200 rounded-lg px-6 py-5 hover:shadow-md transition"
+        >
+          <span className="text-[15px] font-medium text-gray-900">
+            {item}
+          </span>
+          <span className="text-blue-600 font-semibold text-lg">→</span>
+        </div>
+      ))}
+
+    </div>
+
+  </div>
+</section>
 
               {/* TRUST SIGNALS */}
-              <section className="py-16 bg-white border-t border-b px-6">
-                <div className="max-w-6xl mx-auto">
-                  <h3 className="text-[12px] font-semibold text-gray-500 uppercase tracking-wide text-center mb-10">
-                    Our Compliance Approach
-                  </h3>
+              {/* COMPLIANCE APPROACH */}
+<section className="py-24 bg-gray-50 px-6">
+  <div className="max-w-6xl mx-auto">
 
-                  <div className="grid md:grid-cols-3 gap-10 text-center">
-                    <Trust title="Framework-Aligned" />
-                    <Trust title="Auditor-Ready Delivery" />
-                    <Trust title="Enterprise-Grade Execution" />
-                  </div>
-                </div>
-              </section>
+    {/* Section Header */}
+    <div className="text-center max-w-3xl mx-auto mb-16">
+      <p className="text-[12px] uppercase tracking-widest text-blue-600 font-semibold mb-3">
+        Our Compliance Approach
+      </p>
+      <h2 className="text-[34px] font-semibold tracking-tight text-gray-900 mb-4">
+        Built for Audit Confidence. Designed for Scale.
+      </h2>
+      <p className="text-[17px] text-gray-600 leading-relaxed">
+        Renolsys delivers enterprise-grade compliance programs that align
+        regulatory requirements, operational realities, and auditor expectations.
+      </p>
+    </div>
+
+    {/* Approach Cards */}
+    <div className="grid md:grid-cols-3 gap-10">
+
+      {/* Card 1 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
+        <div className="text-blue-600 text-sm font-semibold mb-3">
+          01
+        </div>
+        <h3 className="text-[20px] font-semibold text-gray-900 mb-3">
+          Framework-Aligned
+        </h3>
+        <p className="text-[15px] text-gray-600 leading-relaxed">
+          Compliance programs mapped directly to ISO 27001, SOC 2, PCI DSS,
+          and NIST CSF — ensuring alignment with globally recognized standards.
+        </p>
+      </div>
+
+      {/* Card 2 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
+        <div className="text-blue-600 text-sm font-semibold mb-3">
+          02
+        </div>
+        <h3 className="text-[20px] font-semibold text-gray-900 mb-3">
+          Auditor-Ready Delivery
+        </h3>
+        <p className="text-[15px] text-gray-600 leading-relaxed">
+          Policies, controls, and evidence structured to withstand internal
+          and external audits with minimal friction and rework.
+        </p>
+      </div>
+
+      {/* Card 3 */}
+      <div className="bg-white border border-gray-200 rounded-xl p-8 hover:shadow-lg transition">
+        <div className="text-blue-600 text-sm font-semibold mb-3">
+          03
+        </div>
+        <h3 className="text-[20px] font-semibold text-gray-900 mb-3">
+          Enterprise-Grade Execution
+        </h3>
+        <p className="text-[15px] text-gray-600 leading-relaxed">
+          Designed to scale across startups, regulated enterprises,
+          and global organizations with complex compliance requirements.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
               {/* PROCESS */}
-              <section id="process" className="py-16 bg-gray-900 text-white px-6">
-                <div className="max-w-6xl mx-auto">
-                  <h2 className="text-[32px] font-semibold text-center mb-12">
-                    Our Compliance Delivery Framework
-                  </h2>
+<section className="py-24 bg-gray-50 px-6">
+  <div className="max-w-6xl mx-auto">
 
-                  <div className="grid md:grid-cols-3 gap-6">
-                    <ProcessStep
-                      number="01"
-                      title="Assess"
-                      description="Scope definition, risk identification, and maturity assessment aligned with regulatory expectations."
-                    />
-                    <ProcessStep
-                      number="02"
-                      title="Implement"
-                      description="Control design, policy development, remediation tracking, and evidence readiness."
-                    />
-                    <ProcessStep
-                      number="03"
-                      title="Certify"
-                      description="Audit preparation and certification support through external assessment."
-                    />
-                  </div>
-                </div>
-              </section>
+    <div className="max-w-3xl mx-auto text-center mb-16">
+      <p className="text-sm uppercase tracking-widest text-blue-600 mb-3">
+        Our Delivery Methodology
+      </p>
+
+      <h2 className="text-[36px] font-semibold tracking-tight text-gray-900 mb-4">
+        A Proven Compliance Execution Model
+      </h2>
+
+      <p className="text-gray-600 text-[16px] leading-relaxed">
+        A structured, auditor-aligned approach designed to reduce risk,
+        eliminate rework, and accelerate certification outcomes.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-10">
+      <ProcessStep
+        number="01"
+        title="Assess"
+        description="Define scope, identify risks, and perform a current-state maturity assessment aligned with regulatory and auditor expectations."
+      />
+
+      <ProcessStep
+        number="02"
+        title="Implement"
+        description="Design controls, develop policies, track remediation, and establish evidence structures across frameworks."
+      />
+
+      <ProcessStep
+        number="03"
+        title="Certify"
+        description="Prepare audit artifacts, conduct stakeholder walkthroughs, and support certification through external assessment."
+      />
+    </div>
+
+  </div>
+</section>
+
+
 
               {/* CTA */}
               <section id="contact" className="py-24 px-6 bg-blue-600 text-white text-center">
@@ -125,6 +239,7 @@ export default function App() {
         <Route path="/iso-27001" element={<ISO27001 />} />
         <Route path="/soc-2" element={<SOC2 />} />
         <Route path="/pci-dss" element={<PCIDSS />} />
+        <Route path="/third-party-risk" element={<ThirdPartyRisk />} />
 
         {/* BLOG & CONTACT */}
         <Route path="/blog" element={<Blog />} />
@@ -153,17 +268,26 @@ function Service({ icon, title }) {
 
 function ProcessStep({ number, title, description }) {
   return (
-    <div className="bg-gray-800 border border-gray-700 rounded-lg p-6">
-      <div className="flex gap-4">
-        <div className="text-blue-400 font-bold">{number}</div>
-        <div>
-          <h3 className="font-semibold mb-2 text-white">{title}</h3>
-          <p className="text-gray-300 text-sm">{description}</p>
+    <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+
+      <div className="flex items-start gap-4 mb-4">
+        <div className="text-blue-600 text-[18px] font-semibold">
+          {number}
         </div>
+
+        <h3 className="text-[20px] font-semibold text-gray-900">
+          {title}
+        </h3>
       </div>
+
+      <p className="text-[15px] text-gray-600 leading-relaxed">
+        {description}
+      </p>
+
     </div>
   );
 }
+
 
 function Trust({ title }) {
   return (
