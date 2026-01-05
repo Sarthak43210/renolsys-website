@@ -8,6 +8,9 @@ import SOC2 from "./pages/SOC2";
 import PCIDSS from "./pages/PCIDSS";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import { Search, Settings, BadgeCheck } from "lucide-react";
+
+
 
 import ThirdPartyRisk from "./pages/ThirdPartyRisk";
 
@@ -169,11 +172,12 @@ export default function App() {
 </section>
 
 
-              {/* PROCESS */}
-<section className="py-24 bg-gray-50 px-6">
+    {/* PROCESS */}
+<section className="py-24 px-6 bg-slate-50 border-t border-slate-200">
   <div className="max-w-6xl mx-auto">
 
-    <div className="max-w-3xl mx-auto text-center mb-16">
+    {/* Header */}
+    <div className="max-w-3xl mx-auto text-center mb-20">
       <p className="text-sm uppercase tracking-widest text-blue-600 mb-3">
         Our Delivery Methodology
       </p>
@@ -188,27 +192,37 @@ export default function App() {
       </p>
     </div>
 
-    <div className="grid md:grid-cols-3 gap-10">
-      <ProcessStep
-        number="01"
-        title="Assess"
-        description="Define scope, identify risks, and perform a current-state maturity assessment aligned with regulatory and auditor expectations."
-      />
+    {/* Timeline container */}
+    <div className="relative">
 
-      <ProcessStep
-        number="02"
-        title="Implement"
-        description="Design controls, develop policies, track remediation, and establish evidence structures across frameworks."
-      />
+      {/* Timeline line (PHASE 2) */}
+      <div className="hidden md:block absolute top-8 left-0 right-0 h-px bg-slate-200" />
 
-      <ProcessStep
-        number="03"
-        title="Certify"
-        description="Prepare audit artifacts, conduct stakeholder walkthroughs, and support certification through external assessment."
-      />
+      {/* Steps */}
+      <div className="relative grid md:grid-cols-3 gap-10">
+        <ProcessStep
+          number="01"
+          title="Assess"
+          description="Define scope, identify risks, and perform a current-state maturity assessment aligned with regulatory and auditor expectations."
+        />
+
+        <ProcessStep
+          number="02"
+          title="Implement"
+          description="Design controls, develop policies, track remediation, and establish evidence structures across frameworks."
+        />
+
+        <ProcessStep
+          number="03"
+          title="Certify"
+          description="Prepare audit artifacts, conduct stakeholder walkthroughs, and support certification through external assessment."
+        />
+      </div>
+
     </div>
-
   </div>
+
+
 </section>
 
 
@@ -267,26 +281,48 @@ function Service({ icon, title }) {
 }
 
 function ProcessStep({ number, title, description }) {
-  return (
-    <div className="bg-white border border-gray-200 rounded-xl p-8 shadow-sm hover:shadow-md transition">
+  const icons = {
+    "01": <Search size={22} />,
+    "02": <Settings size={22} />,
+    "03": <BadgeCheck size={22} />,
+  };
 
-      <div className="flex items-start gap-4 mb-4">
-        <div className="text-blue-600 text-[18px] font-semibold">
-          {number}
+  return (
+    <div className="relative bg-white border border-slate-200 rounded-xl p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+      {/* Arrow connector (desktop only) */}
+      {number !== "03" && (
+        <div className="hidden md:block absolute top-1/2 -right-5 text-slate-300 text-xl">
+          →
+        </div>
+      )}
+
+      {/* Icon + Step */}
+      <div className="flex items-center gap-4 mb-5">
+        <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+          {icons[number]}
         </div>
 
-        <h3 className="text-[20px] font-semibold text-gray-900">
-          {title}
-        </h3>
+        <span className="text-sm font-semibold text-blue-600">
+          {number}
+        </span>
       </div>
 
-      <p className="text-[15px] text-gray-600 leading-relaxed">
+      {/* Title */}
+      <h3 className="text-lg font-semibold text-gray-900 mb-3">
+        {title}
+      </h3>
+
+      {/* Description */}
+      <p className="text-sm text-gray-600 leading-relaxed">
         {description}
       </p>
 
     </div>
   );
 }
+
+
 
 
 function Trust({ title }) {
