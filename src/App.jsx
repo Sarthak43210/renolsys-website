@@ -12,11 +12,12 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import { Search, Settings, BadgeCheck } from "lucide-react";
 import { motion } from "framer-motion";
-
-
-
-
-
+import whoStartups from "./assets/who-startups.png";
+import whoEnterprise from "./assets/who-enterprise.png";
+import whoLeaders from "./assets/who-leaders.png";
+import frameworkImg from "./assets/framework.png";
+import auditorImg from "./assets/auditor.png";
+import enterpriseImg from "./assets/enterprise.png";
 
 
 
@@ -127,6 +128,8 @@ export default function App() {
                   </div>
                 </div>
               </section>
+
+
 {/* THIRD-PARTY RISK MANAGEMENT */}
 <section className="py-24 bg-white px-6">
   <div className="max-w-6xl mx-auto text-center">
@@ -274,6 +277,7 @@ export default function App() {
 
 
 {/* WHO WE WORK WITH */}
+
 <section className="py-24 bg-white px-6 border-t border-slate-200">
   <div className="max-w-6xl mx-auto">
 
@@ -294,42 +298,64 @@ export default function App() {
     </div>
 
     {/* Cards */}
-    <div className="grid md:grid-cols-3 gap-10">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
 
-      {/* Card 1 */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          High-Growth Startups & Scaleups
-        </h3>
-        <p className="text-sm text-gray-600 leading-relaxed">
-          SaaS and technology-driven companies preparing for enterprise
-          customers, regulatory requirements, or first-time certifications.
-        </p>
-      </div>
-
-      {/* Card 2 */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          Regulated & Enterprise Organizations
-        </h3>
-        <p className="text-sm text-gray-600 leading-relaxed">
-          Enterprises operating in regulated environments requiring mature
-          risk management, governance structures, and audit readiness.
-        </p>
-      </div>
-
-      {/* Card 3 */}
-      <div className="bg-slate-50 border border-slate-200 rounded-xl p-8 hover:shadow-md transition">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          Security, Risk & Compliance Leaders
-        </h3>
-        <p className="text-sm text-gray-600 leading-relaxed">
-          CISOs, Risk Heads, Compliance Managers, and founders responsible
-          for building and maintaining trust with customers and regulators.
-        </p>
-      </div>
-
+  {/* Card 1 */}
+  <div className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition">
+    <img 
+      src={whoStartups}
+      alt="High Growth Startups"
+      className="w-full h-48 object-contain bg-slate-50 p-6"
+    />
+    <div className="p-6">
+      <h3 className="text-lg font-semibold text-slate-900 mb-2">
+        High-Growth Startups & Scaleups
+      </h3>
+      <p className="text-slate-600 text-sm">
+        SaaS and technology-driven companies preparing for enterprise customers, regulatory
+        requirements, or first-time certifications.
+      </p>
     </div>
+  </div>
+
+  {/* Card 2 */}
+  <div className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition">
+    <img 
+      src={whoEnterprise}
+      alt="Regulated Enterprises"
+      className="w-full h-48 object-contain bg-slate-50 p-6"
+    />
+    <div className="p-6">
+      <h3 className="text-lg font-semibold text-slate-900 mb-2">
+        Regulated & Enterprise Organizations
+      </h3>
+      <p className="text-slate-600 text-sm">
+        Enterprises operating in regulated environments requiring mature risk management,
+        governance structures, and audit readiness.
+      </p>
+    </div>
+  </div>
+
+  {/* Card 3 */}
+  <div className="group rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition">
+    <img 
+      src={whoLeaders}
+      alt="Security Leaders"
+      className="w-full h-48 object-contain bg-slate-50 p-6"
+    />
+    <div className="p-6">
+      <h3 className="text-lg font-semibold text-slate-900 mb-2">
+        Security, Risk & Compliance Leaders
+      </h3>
+      <p className="text-slate-600 text-sm">
+        CISOs, Risk Heads, Compliance Managers, and founders responsible for building and
+        maintaining trust with customers and regulators.
+      </p>
+    </div>
+  </div>
+
+</div>
+
 
   </div>
 </section>
@@ -401,39 +427,52 @@ export default function App() {
       Trusted Compliance Delivery
     </p>
 
-    <div className="grid md:grid-cols-3 gap-10 text-center">
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mt-16">
 
-      <div>
-        <h4 className="text-lg font-semibold text-slate-900 mb-2">
-          Framework-Mapped Controls
-        </h4>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          All policies, controls, and evidence are mapped directly to ISO 27001,
-          SOC 2, PCI DSS, and NIST CSF requirements.
-        </p>
-      </div>
+  {/* Framework Mapped */}
+  <div className="text-center">
+    <img
+      src={frameworkImg}
+      alt="Framework mapped controls"
+      className="w-full h-48 object-cover rounded-xl mb-6 shadow-lg"
+    />
+    <h3 className="text-xl font-semibold mb-3">Framework-Mapped Controls</h3>
+    <p className="text-slate-600">
+      All policies, controls, and evidence are mapped directly to ISO 27001,
+      SOC 2, PCI DSS, and NIST CSF requirements.
+    </p>
+  </div>
 
-      <div>
-        <h4 className="text-lg font-semibold text-slate-900 mb-2">
-          Auditor-First Execution
-        </h4>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Our delivery model is designed around how external auditors evaluate
-          scope, control design, and evidence sufficiency.
-        </p>
-      </div>
+  {/* Auditor First */}
+  <div className="text-center">
+    <img
+      src={auditorImg}
+      alt="Auditor first execution"
+      className="w-full h-48 object-cover rounded-xl mb-6 shadow-lg"
+    />
+    <h3 className="text-xl font-semibold mb-3">Auditor-First Execution</h3>
+    <p className="text-slate-600">
+      Our delivery model is designed around how external auditors evaluate
+      scope, control design, and evidence sufficiency.
+    </p>
+  </div>
 
-      <div>
-        <h4 className="text-lg font-semibold text-slate-900 mb-2">
-          Enterprise-Grade Documentation
-        </h4>
-        <p className="text-sm text-slate-600 leading-relaxed">
-          Documentation structured for internal governance, regulatory reviews,
-          and repeatable certification cycles.
-        </p>
-      </div>
+  {/* Enterprise Grade */}
+  <div className="text-center">
+    <img
+      src={enterpriseImg}
+      alt="Enterprise documentation"
+      className="w-full h-48 object-cover rounded-xl mb-6 shadow-lg"
+    />
+    <h3 className="text-xl font-semibold mb-3">Enterprise-Grade Documentation</h3>
+    <p className="text-slate-600">
+      Documentation structured for internal governance, regulatory reviews,
+      and repeatable certification cycles.
+    </p>
+  </div>
 
-    </div>
+</div>
+
   </div>
 </section>
 
