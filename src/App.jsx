@@ -18,7 +18,9 @@ import whoLeaders from "./assets/who-leaders.png";
 import frameworkImg from "./assets/framework.png";
 import auditorImg from "./assets/auditor.png";
 import enterpriseImg from "./assets/enterprise.png";
-
+import frameworkControlsImg from "./assets/framework/framework_controls.png";
+import auditorExecutionImg from "./assets/framework/auditor_execution.png";
+import enterpriseDocsImg from "./assets/framework/enterprise_docs.png"
 
 
 import ThirdPartyRisk from "./pages/ThirdPartyRisk";
@@ -41,75 +43,56 @@ export default function App() {
 
              {/* HERO */}
 
-<section className="relative overflow-hidden bg-gradient-to-br from-[#020617] via-[#08102a] to-[#0b1f5e]">
-  <div className="max-w-7xl mx-auto px-6 py-32 grid md:grid-cols-2 gap-16 items-center">
+<section className="relative w-full h-[65vh] flex items-center overflow-hidden">
 
-    {/* LEFT CONTENT */}
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-    >
-      <p className="text-xs uppercase tracking-widest text-blue-400 mb-4">
-        Compliance & Risk Advisory
-      </p>
+  <video
+    className="absolute inset-0 w-full h-full object-cover"
+    src="/videos/homepage-hero.mp4"
+    autoPlay
+    muted
+    loop
+    playsInline
+  />
 
-      <h1 className="text-5xl md:text-6xl font-semibold leading-tight text-white">
-        Audit-Ready Compliance.
-        <span className="block text-blue-400">Designed for Scale.</span>
-      </h1>
+ {/* <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
 
-      <p className="mt-6 max-w-xl text-slate-300 text-lg leading-relaxed">
-        Renolsys helps high-growth and regulated organizations design,
-        implement, and operate enterprise-grade compliance programs aligned
-        with ISO 27001, SOC 2, PCI DSS, and global regulatory expectations.
-      </p>
+  <div className="relative z-10 w-full">
+    <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
 
-      <div className="mt-10 flex items-center gap-6">
-        <a
-          href="#contact"
-          className="inline-flex items-center rounded-xl bg-blue-500 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-blue-500/30 hover:bg-blue-400 transition"
-        >
-          Request Expert Consultation
-        </a>
+      <div>
+        <p className="text-blue-400 text-sm uppercase tracking-widest mb-4">
+          Compliance & Risk Advisory
+        </p>
 
-        <span className="text-sm text-slate-400">
-          Trusted by startups & regulated enterprises
-        </span>
+        <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+          Audit-Ready Compliance.
+          <span className="text-blue-400 block">Designed for Scale.</span>
+        </h1>
+
+        <p className="text-slate-200 mt-6 max-w-xl">
+          Renolsys helps high-growth and regulated organizations design,
+          implement, and operate enterprise-grade compliance programs aligned
+          with ISO 27001, SOC 2, PCI DSS, and global regulatory expectations.
+        </p>
+
+        <div className="mt-8 flex items-center gap-6">
+          <button className="bg-blue-500 hover:bg-blue-600 transition text-white px-6 py-3 rounded-xl">
+            Request Expert Consultation
+          </button>
+
+          <span className="text-slate-300 text-sm">
+            Trusted by startups & regulated enterprises
+          </span>
+        </div>
       </div>
-    </motion.div>
 
-    {/* RIGHT VISUAL CARD */}
-    <motion.div
-      initial={{ opacity: 0, x: 40 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-      className="relative"
-    >
-      <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 shadow-2xl">
-        <ul className="divide-y divide-white/10 text-sm text-slate-200">
-          {[
-            "ISO 27001 Control Mapping",
-            "SOC 2 Evidence Readiness",
-            "Risk Register & Gap Analysis",
-            "Audit Walkthrough Support",
-          ].map((item) => (
-            <li
-              key={item}
-              className="flex items-center justify-between py-4"
-            >
-              <span>{item}</span>
-              <span className="text-emerald-400 text-xs font-medium">
-                Complete
-              </span>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </motion.div>
+      <div></div>
 
-  </div>
-</section>
+    </div>
+  </div> 
+*/}
+  </section>
+
 
 
 
@@ -361,61 +344,76 @@ export default function App() {
 </section>
 
 {/* FRAMEWORK COVERAGE */}
-<section className="py-24 px-6 bg-slate-50 border-t border-slate-200">
-  <div className="max-w-6xl mx-auto">
+<section className="py-24 px-6 bg-white">
+  <div className="max-w-7xl mx-auto text-center mb-16">
+    <p className="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-4">
+      FRAMEWORK COVERAGE
+    </p>
+    <h2 className="text-4xl md:text-5xl font-semibold text-slate-900">
+      Compliance Programs Aligned to Global Standards
+    </h2>
+    <p className="mt-6 text-lg text-slate-600 max-w-3xl mx-auto">
+      Our compliance methodology is mapped directly to globally recognized frameworks —
+      ensuring audit defensibility, consistency, and scalability.
+    </p>
+  </div>
 
-    {/* Header */}
-    <div className="max-w-3xl mx-auto text-center mb-16">
-      <p className="text-sm uppercase tracking-widest text-blue-600 mb-3">
-        Framework Coverage
-      </p>
-
-      <h2 className="text-[36px] font-semibold tracking-tight text-gray-900 mb-4">
-        Compliance Programs Aligned to Global Standards
-      </h2>
-
-      <p className="text-gray-600 text-[16px] leading-relaxed">
-        Our compliance methodology is mapped directly to globally recognized
-        frameworks — ensuring audit defensibility, consistency, and scalability
-        across regulatory environments.
-      </p>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
+    
+    {/* Card 1 */}
+    <div className="rounded-2xl overflow-hidden shadow-lg border hover:shadow-2xl transition">
+      <img
+        src={frameworkControlsImg}
+        alt="Framework mapped controls"
+        className="h-48 w-full object-cover"
+      />
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Framework-Mapped Controls
+        </h3>
+        <p className="text-slate-600 text-sm">
+          All policies, controls, and evidence mapped directly to ISO 27001, SOC 2, PCI DSS,
+          and NIST CSF requirements.
+        </p>
+      </div>
     </div>
 
-    {/* Framework Grid */}
-    <div className="grid md:grid-cols-3 gap-10">
-
-      <div className="bg-white border border-slate-200 rounded-xl p-8">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          ISO 27001
+    {/* Card 2 */}
+    <div className="rounded-2xl overflow-hidden shadow-lg border hover:shadow-2xl transition">
+      <img
+        src={auditorExecutionImg}
+        alt="Auditor-first execution"
+        className="h-48 w-full object-cover"
+      />
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Auditor-First Execution
         </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Information Security Management System (ISMS) design, risk assessment,
-          Statement of Applicability (SoA), and audit readiness aligned with
-          ISO/IEC 27001 requirements.
+        <p className="text-slate-600 text-sm">
+          Our delivery model mirrors how auditors evaluate scope, control design, and
+          evidence sufficiency.
         </p>
       </div>
-
-      <div className="bg-white border border-slate-200 rounded-xl p-8">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          SOC 2 (Type I & II)
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Trust Services Criteria mapping, control design, evidence structuring,
-          and auditor coordination for SOC 2 readiness and ongoing compliance.
-        </p>
-      </div>
-
-      <div className="bg-white border border-slate-200 rounded-xl p-8">
-        <h3 className="text-lg font-semibold text-gray-900 mb-3">
-          PCI DSS
-        </h3>
-        <p className="text-gray-600 text-sm leading-relaxed">
-          Cardholder data environment (CDE) scoping, gap assessments, remediation
-          tracking, and compliance validation aligned with PCI DSS requirements.
-        </p>
-      </div>
-
     </div>
+
+    {/* Card 3 */}
+    <div className="rounded-2xl overflow-hidden shadow-lg border hover:shadow-2xl transition">
+      <img
+        src={enterpriseDocsImg}
+        alt="Enterprise-grade documentation"
+        className="h-48 w-full object-cover"
+      />
+      <div className="p-6">
+        <h3 className="text-xl font-semibold mb-3">
+          Enterprise-Grade Documentation
+        </h3>
+        <p className="text-slate-600 text-sm">
+          Documentation structured for internal governance, regulatory reviews, and
+          repeatable certification cycles.
+        </p>
+      </div>
+    </div>
+
   </div>
 </section>
 
