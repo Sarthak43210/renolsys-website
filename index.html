@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,9 +19,9 @@
             --text-gray: #555555;
             --text-light: #888888;
             --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -42,7 +43,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--text-dark);
             line-height: 1.25;
             font-weight: 700;
@@ -74,11 +80,21 @@
             padding: 100px 0;
         }
 
-        .bg-white { background-color: var(--bg-white); }
-        .bg-light { background-color: var(--bg-light); }
+        .bg-white {
+            background-color: var(--bg-white);
+        }
 
-        .text-accent { color: var(--accent); }
-        .font-bold { font-weight: 700; }
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .font-bold {
+            font-weight: 700;
+        }
 
         /* Buttons */
         .btn {
@@ -231,9 +247,27 @@
             color: var(--accent);
         }
 
-        /* Hero */
         .hero {
             padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
             text-align: center;
         }
 
@@ -289,10 +323,24 @@
         }
 
         /* Cards Shared */
-        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-        .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
-        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-        
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
         .card {
             background-color: white;
             border: 1px solid var(--border-color);
@@ -469,88 +517,93 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .grid-4, .grid-5, .footer-grid {
+
+            .grid-4,
+            .grid-5,
+            .footer-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
-            .hero h1 { font-size: 52px; }
+
+            .hero h1 {
+                font-size: 52px;
+            }
         }
 
         @media (max-width: 768px) {
-            .nav-menu { display: none; }
-            .hero-grid { grid-template-columns: 1fr !important; text-align: center; }
-            .spline-wrapper { display: none; }
-            .hero h1 { font-size: 40px; }
-            .hero-btns { flex-direction: column; justify-content: center; }
-            .hero-btns .btn { width: 100%; }
-            .stats-wrap { grid-template-columns: repeat(2, 1fr); gap: 40px; }
-            .grid-4, .grid-5, .grid-3 { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr; }
-            .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .nav-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+            }
+
+            .stats-wrap {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+            }
+
+            .grid-4,
+            .grid-5,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
         }
 
         /* Hover Effects Additions */
-        .card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
             border-color: var(--accent);
         }
-        
-        .case-card { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        .case-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .case-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-lg);
         }
 
-        .why-col .icon-box { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .why-col .icon-box {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
         .why-col:hover .icon-box {
             transform: rotate(10deg) scale(1.1);
         }
-
-        /* Spline Wrapper */
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-            align-items: center;
-            text-align: left;
-        }
-
-        .hero-content {
-            z-index: 10;
-        }
-
-        .hero h1 {
-            margin: 0 0 24px;
-        }
-
-        .hero p {
-            margin: 0 0 40px;
-        }
-
-        .hero-btns {
-            justify-content: flex-start;
-        }
-
-        .spline-wrapper {
-            width: 100%;
-            height: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        spline-viewer {
-            width: 600px !important;
-            height: 600px !important;
-        }
     </style>
-    
+
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.87/build/spline-viewer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -575,24 +628,26 @@
 
     <!-- Section 1: Hero -->
     <section id="home" class="hero bg-light">
-        <div class="container hero-grid">
+        <div id="particles-js"></div>
+        <div class="container">
             <div class="hero-content">
                 <div class="pill pill-outline hero-anim">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
-                        <path d="M5 3v4M3 5h4"/>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                        <path d="M5 3v4M3 5h4" />
                     </svg>
                     AI-Powered Data Intelligence
                 </div>
-                <h1 class="hero-anim">Transform Your Data Into <span class="text-accent">Strategic Intelligence</span></h1>
-                <p class="hero-anim">Renolsys helps organizations transform complex data into clear, actionable insights using business intelligence, analytics, and AI-driven solutions.</p>
+                <h1 class="hero-anim">Transform Your Data Into <span class="text-accent">Strategic Intelligence</span>
+                </h1>
+                <p class="hero-anim">Renolsys helps organizations transform complex data into clear, actionable insights
+                    using business intelligence, analytics, and AI-driven solutions.</p>
                 <div class="hero-btns hero-anim">
                     <a href="#contact" class="btn btn-primary">Get Started &rarr;</a>
                     <a href="#contact" class="btn btn-outline">Book a Consultation</a>
                 </div>
-            </div>
-            <div class="spline-wrapper hero-spline-anim">
-                <spline-viewer url="https://prod.spline.design/kZDDjO6vsOOBoBSn/scene.splinecode"></spline-viewer>
             </div>
         </div>
     </section>
@@ -629,13 +684,16 @@
                 <h2>What We Do</h2>
                 <p>End-to-end data solutions from dashboards to AI models to on-demand talent.</p>
             </div>
-            
+
             <div class="grid-4">
                 <!-- Service 1 -->
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><path d="M3 9h18"/><path d="M9 21V9"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                            <path d="M3 9h18" />
+                            <path d="M9 21V9" />
                         </svg>
                     </div>
                     <h3>Business Intelligence</h3>
@@ -644,8 +702,10 @@
                 <!-- Service 2 -->
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 3v18h18" />
+                            <path d="m19 9-5 5-4-4-3 3" />
                         </svg>
                     </div>
                     <h3>Data Analytics</h3>
@@ -654,8 +714,12 @@
                 <!-- Service 3 -->
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" />
+                            <path
+                                d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" />
                         </svg>
                     </div>
                     <h3>Predictive Analytics & AI</h3>
@@ -664,8 +728,12 @@
                 <!-- Service 4 -->
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                     </div>
                     <h3>Analytics Talent</h3>
@@ -693,8 +761,12 @@
                     <div class="process-num">01</div>
                     <div class="process-content">
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><circle cx="11.5" cy="14.5" r="2.5"/><path d="M13.25 16.25 16 19"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <circle cx="11.5" cy="14.5" r="2.5" />
+                                <path d="M13.25 16.25 16 19" />
                             </svg>
                         </div>
                         <h3>Data Assessment</h3>
@@ -705,8 +777,11 @@
                     <div class="process-num">02</div>
                     <div class="process-content">
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                                <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                                <path d="M3 12A9 3 0 0 0 21 12" />
                             </svg>
                         </div>
                         <h3>Data Architecture</h3>
@@ -717,8 +792,10 @@
                     <div class="process-num">03</div>
                     <div class="process-content">
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
                             </svg>
                         </div>
                         <h3>Analytics Implementation</h3>
@@ -729,8 +806,12 @@
                     <div class="process-num">04</div>
                     <div class="process-content">
                         <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                                <path d="M21 3v5h-5" />
+                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                                <path d="M8 16H3v5" />
                             </svg>
                         </div>
                         <h3>Continuous Optimization</h3>
@@ -753,8 +834,10 @@
             <div class="grid-5">
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                         </svg>
                     </div>
                     <h3>Healthcare</h3>
@@ -762,8 +845,19 @@
                 </div>
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
+                            <path d="M9 22v-4h6v4" />
+                            <path d="M8 6h.01" />
+                            <path d="M16 6h.01" />
+                            <path d="M12 6h.01" />
+                            <path d="M12 10h.01" />
+                            <path d="M12 14h.01" />
+                            <path d="M16 10h.01" />
+                            <path d="M16 14h.01" />
+                            <path d="M8 10h.01" />
+                            <path d="M8 14h.01" />
                         </svg>
                     </div>
                     <h3>Real Estate</h3>
@@ -771,8 +865,12 @@
                 </div>
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect width="20" height="12" x="2" y="6" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01"/><path d="M18 12h.01"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="12" x="2" y="6" rx="2" />
+                            <circle cx="12" cy="12" r="2" />
+                            <path d="M6 12h.01" />
+                            <path d="M18 12h.01" />
                         </svg>
                     </div>
                     <h3>Fintech</h3>
@@ -780,8 +878,11 @@
                 </div>
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+                            <path d="M3 6h18" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
                         </svg>
                     </div>
                     <h3>Retail & E-commerce</h3>
@@ -789,8 +890,10 @@
                 </div>
                 <div class="card">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
                         </svg>
                     </div>
                     <h3>SaaS Companies</h3>
@@ -848,8 +951,9 @@
             <div class="grid-4">
                 <div class="why-col">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                         </svg>
                     </div>
                     <h3>Faster Insights</h3>
@@ -857,8 +961,10 @@
                 </div>
                 <div class="why-col">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                            <polyline points="16 7 22 7 22 13" />
                         </svg>
                     </div>
                     <h3>Data-Driven Decisions</h3>
@@ -866,8 +972,11 @@
                 </div>
                 <div class="why-col">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                            <path d="M3 12A9 3 0 0 0 21 12" />
                         </svg>
                     </div>
                     <h3>Scalable Infrastructure</h3>
@@ -875,8 +984,9 @@
                 </div>
                 <div class="why-col">
                     <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                         </svg>
                     </div>
                     <h3>Expert Talent Access</h3>
@@ -895,7 +1005,8 @@
                         <div class="logo-box">R</div>
                         Renolsys
                     </a>
-                    <p class="tagline">Transforming businesses through intelligent data solutions, advanced analytics, and AI-driven consulting.</p>
+                    <p class="tagline">Transforming businesses through intelligent data solutions, advanced analytics,
+                        and AI-driven consulting.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -925,7 +1036,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer-bottom">
                 <p>&copy; 2026 Renolsys. All rights reserved.</p>
                 <div class="footer-bottom-links">
@@ -952,15 +1063,13 @@
 
         // 2. Hero Entrance
         const heroTimeline = gsap.timeline();
-        
+
         // Ensure initial hidden state
         gsap.set('.hero-anim', { y: 40, opacity: 0 });
-        gsap.set('.hero-spline-anim', { x: 40, opacity: 0 });
 
         heroTimeline
             .to('.pill.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "+=0.2")
             .to('h1.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6")
-            .to('.hero-spline-anim', { x: 0, opacity: 1, duration: 1, ease: 'power3.out' }, "-=0.7")
             .to('p.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6")
             .to('.hero-btns.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6");
 
@@ -974,13 +1083,13 @@
             const items = section.querySelectorAll(itemsSelector);
 
             // Pill Animation
-            if(pill) {
-                gsap.fromTo(pill, 
+            if (pill) {
+                gsap.fromTo(pill,
                     { scale: 0.8, opacity: 0 },
                     {
-                        scale: 1, 
-                        opacity: 1, 
-                        duration: 0.6, 
+                        scale: 1,
+                        opacity: 1,
+                        duration: 0.6,
                         ease: 'back.out(1.7)',
                         scrollTrigger: {
                             trigger: section,
@@ -991,14 +1100,14 @@
             }
 
             // Headers Animation
-            if(header) {
+            if (header) {
                 const headerElements = header.querySelectorAll('h2, p');
-                gsap.fromTo(headerElements, 
+                gsap.fromTo(headerElements,
                     { y: 30, opacity: 0 },
                     {
-                        y: 0, 
-                        opacity: 1, 
-                        duration: 0.8, 
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
                         stagger: 0.1,
                         ease: 'power3.out',
                         scrollTrigger: {
@@ -1010,13 +1119,13 @@
             }
 
             // Cards/Items Animation
-            if(items.length > 0) {
-                gsap.fromTo(items, 
+            if (items.length > 0) {
+                gsap.fromTo(items,
                     { y: 50, opacity: 0 },
                     {
-                        y: 0, 
-                        opacity: 1, 
-                        duration: 0.8, 
+                        y: 0,
+                        opacity: 1,
+                        duration: 0.8,
                         stagger: 0.15,
                         ease: 'power3.out',
                         scrollTrigger: {
@@ -1038,7 +1147,7 @@
         const statsSection = document.querySelector('.stats-wrap');
         const statNums = document.querySelectorAll('.stat-num');
 
-        if(statsSection && statNums.length > 0) {
+        if (statsSection && statNums.length > 0) {
             ScrollTrigger.create({
                 trigger: statsSection,
                 start: "top 90%",
@@ -1054,7 +1163,7 @@
                             duration: 2,
                             ease: 'power2.out',
                             snap: { innerText: 1 },
-                            onUpdate: function() {
+                            onUpdate: function () {
                                 stat.innerText = Math.round(this.targets()[0].innerText) + suffix;
                             }
                         });
@@ -1062,6 +1171,47 @@
                 }
             });
         }
+
+        // 5. Initialize ParticlesJS
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#5b52f5" },
+                shape: { type: "circle" },
+                opacity: { value: 0.4, random: true },
+                size: { value: 3, random: true },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: "#5b52f5",
+                    opacity: 0.2,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 2,
+                    direction: "none",
+                    random: true,
+                    straight: false,
+                    out_mode: "out",
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "grab" },
+                    onclick: { enable: true, mode: "push" },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 140, line_linked: { opacity: 0.8 } },
+                    push: { particles_nb: 4 }
+                }
+            },
+            retina_detect: true
+        });
     </script>
 </body>
+
 </html>
