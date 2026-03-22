@@ -1,0 +1,123 @@
+/* Service Card Specific Styles */
+.service-card {
+    background-color: white;
+    border: 1px solid #e8e8e8;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: var(--transition);
+}
+
+.service-card:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    border-color: #c5bff7;
+    transform: translateY(-4px);
+}
+
+.service-icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.icon-blue {
+    background-color: #dbeafe;
+    color: #2563eb;
+}
+
+.icon-amber {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.icon-purple {
+    background-color: #ede9fe;
+    color: #5b52f5;
+}
+
+.icon-green {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+
+.service-icon-wrap svg {
+    width: 36px;
+    height: 36px;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0d0d2b;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-desc {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.service-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.service-bullets li {
+    display: flex;
+    align-items: center;
+    font-size: 0.82rem;
+    color: #4b5563;
+}
+
+.bullet-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ede9fe;
+    color: #5b52f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    flex-shrink: 0;
+}
+
+.bullet-icon svg {
+    width: 10px;
+    height: 10px;
+}
+
+.service-link {
+    font-size: 0.85rem;
+    color: #5b52f5;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    display: inline-block;
+    transition: 0.2s ease;
+}
+
+.service-card:hover .service-link {
+    transform: translateX(4px);
+}
+
+.grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 768px) {
+    .grid-2x2 {
+        grid-template-columns: 1fr;
+    }
+}

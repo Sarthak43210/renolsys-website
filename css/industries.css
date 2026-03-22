@@ -1,0 +1,136 @@
+/* Industry Grid Styles */
+.industry-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+}
+
+.ind-card {
+    grid-column: span 2;
+    height: 220px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ind-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.ind-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+@media (max-width: 900px) {
+    .industry-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .ind-card,
+    .ind-card:nth-child(4),
+    .ind-card:nth-child(5) {
+        grid-column: span 1;
+    }
+}
+
+.ind-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.25);
+}
+
+.ind-card:hover .ind-overlay {
+    background: linear-gradient(180deg, rgba(13, 13, 43, 0.08) 0%, rgba(13, 13, 43, 0.55) 100%);
+}
+
+.ind-bg-1 {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.ind-bg-2 {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.ind-bg-3 {
+    background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%);
+}
+
+.ind-bg-4 {
+    background: linear-gradient(135deg, #f953c6 0%, #b91d73 100%);
+}
+
+.ind-bg-5 {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.ind-bg,
+.ind-overlay,
+.ind-texture {
+    position: absolute;
+    inset: 0;
+}
+
+.ind-overlay {
+    background: linear-gradient(180deg, rgba(13, 13, 43, 0.08) 0%, rgba(13, 13, 43, 0.72) 100%);
+    transition: background 0.3s ease;
+}
+
+.ind-texture {
+    background-image: radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.ind-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+}
+
+.ind-tag {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255, 255, 255, 0.65);
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.ind-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 6px;
+    letter-spacing: -0.01em;
+}
+
+.ind-desc {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+    margin: 0;
+}
+
+.ind-icon-wrap {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ind-icon-wrap svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+    fill: none;
+}

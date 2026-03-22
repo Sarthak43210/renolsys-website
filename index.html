@@ -8,830 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-white: #ffffff;
-            --bg-light: #f8f9fc;
-            --accent: #5b52f5;
-            --accent-hover: #453cd9;
-            --accent-light: #ecebff;
-            --text-dark: #0d0d2b;
-            --text-gray: #555555;
-            --text-light: #888888;
-            --border-color: #e2e8f0;
-            --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-gray);
-            background-color: var(--bg-white);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
-            color: var(--text-dark);
-            line-height: 1.25;
-            font-weight: 700;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        svg {
-            display: block;
-        }
-
-        /* Layout & Utility */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
-        .bg-white {
-            background-color: var(--bg-white);
-        }
-
-        .bg-light {
-            background-color: var(--bg-light);
-        }
-
-        .text-accent {
-            color: var(--accent);
-        }
-
-        .font-bold {
-            font-weight: 700;
-        }
-
-        /* Buttons */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 14px 32px;
-            border-radius: 9999px;
-            font-size: 15px;
-            font-weight: 600;
-            transition: var(--transition);
-            cursor: pointer;
-            border: 2px solid transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: white;
-            box-shadow: 0 4px 14px rgba(91, 82, 245, 0.3);
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(91, 82, 245, 0.4);
-        }
-
-        .btn-outline {
-            background-color: white;
-            color: var(--text-dark);
-            border-color: var(--border-color);
-        }
-
-        .btn-outline:hover {
-            border-color: var(--text-dark);
-            background-color: var(--bg-light);
-            transform: translateY(-2px);
-        }
-
-        .link-accent {
-            color: var(--accent);
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .link-accent:hover {
-            gap: 10px;
-            color: var(--accent-hover);
-        }
-
-        /* Badge/Pill System */
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 64px;
-        }
-
-        .pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 16px;
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .pill-outline {
-            border: 1px solid var(--border-color);
-            background-color: transparent;
-            color: var(--text-gray);
-            margin-bottom: 24px;
-        }
-
-        .pill-accent {
-            border: 1px solid rgba(91, 82, 245, 0.2);
-            background-color: var(--accent-light);
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        .section-header h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-        }
-
-        .section-header p {
-            font-size: 18px;
-            color: var(--text-gray);
-        }
-
-        /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--text-dark);
-        }
-
-        .logo-box {
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 10px;
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .nav-link {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--text-dark);
-        }
-
-        .nav-link:hover {
-            color: var(--accent);
-        }
-
-        .hero {
-            padding: 160px 0 100px;
-            text-align: center;
-            position: relative;
-        }
-
-        #particles-js {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin: 0 auto 24px;
-            max-width: 900px;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: var(--text-gray);
-            max-width: 700px;
-            margin: 0 auto 40px;
-        }
-
-        .hero-btns {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-        }
-
-        /* Stats Bar */
-        .stats-wrap {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            padding: 40px;
-            margin-top: -30px;
-            background: transparent;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-num {
-            font-size: 48px;
-            font-weight: 800;
-            color: var(--accent);
-            margin-bottom: 8px;
-            line-height: 1;
-        }
-
-        .stat-label {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        /* Cards Shared */
-        .grid-4 {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .grid-5 {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 20px;
-        }
-
-        .grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-
-        .card {
-            background-color: white;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 32px 24px;
-            transition: var(--transition);
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: rgba(91, 82, 245, 0.3);
-        }
-
-        .icon-box {
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 24px;
-        }
-
-        .card h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        .card p {
-            font-size: 15px;
-            color: var(--text-gray);
-        }
-
-        /* Process Section */
-        .process-item {
-            position: relative;
-        }
-
-        .process-num {
-            font-size: 72px;
-            font-weight: 800;
-            color: var(--accent-light);
-            line-height: 1;
-            margin-bottom: -16px;
-            position: relative;
-            z-index: 1;
-            opacity: 0.8;
-            letter-spacing: -0.02em;
-        }
-
-        .process-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .process-item .icon-box {
-            margin-bottom: 20px;
-        }
-
-        .process-item h3 {
-            font-size: 20px;
-            margin-bottom: 12px;
-        }
-
-        /* Case Studies */
-        .case-card {
-            background-color: white;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 40px 32px;
-            transition: var(--transition);
-        }
-
-        .case-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .case-pill {
-            display: inline-block;
-            background-color: var(--accent-light);
-            color: var(--accent);
-            font-size: 11px;
-            font-weight: 700;
-            padding: 6px 12px;
-            border-radius: 999px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 24px;
-        }
-
-        .case-card .stat-num {
-            font-size: 56px;
-            margin-bottom: 16px;
-        }
-
-        .case-card h3 {
-            font-size: 22px;
-            margin-bottom: 12px;
-        }
-
-        /* Why Us Section */
-        .why-col {
-            text-align: center;
-        }
-
-        .why-col .icon-box {
-            margin: 0 auto 24px;
-        }
-
-        .why-col h3 {
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .center-link {
-            text-align: center;
-            margin-top: 48px;
-        }
-
-        /* Footer */
-        .footer {
-            border-top: 1px solid var(--border-color);
-            padding: 80px 0 32px;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2.5fr 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 64px;
-        }
-
-        .footer p.tagline {
-            margin-top: 24px;
-            max-width: 340px;
-            font-size: 15px;
-        }
-
-        .footer-col h4 {
-            font-size: 16px;
-            margin-bottom: 24px;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-col ul a {
-            font-size: 15px;
-            color: var(--text-gray);
-        }
-
-        .footer-col ul a:hover {
-            color: var(--accent);
-        }
-
-        .footer-bottom {
-            padding-top: 32px;
-            border-top: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 24px;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-
-            .grid-4,
-            .grid-5,
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero h1 {
-                font-size: 52px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-menu {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-            }
-
-            .hero-btns {
-                flex-direction: column;
-                justify-content: center;
-            }
-
-            .hero-btns .btn {
-                width: 100%;
-            }
-
-            .stats-wrap {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 40px;
-            }
-
-            .grid-4,
-            .grid-5,
-            .grid-3 {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-bottom {
-                flex-direction: column;
-                gap: 16px;
-                text-align: center;
-            }
-        }
-
-        /* Hover Effects Additions */
-        .card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--accent);
-        }
-
-        .case-card {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .case-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .why-col .icon-box {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .why-col:hover .icon-box {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        /* Service Card Specific Styles */
-        .service-card {
-            background-color: white;
-            border: 1px solid #e8e8e8;
-            border-radius: 16px;
-            padding: 2rem;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            border-color: #c5bff7;
-            transform: translateY(-4px);
-        }
-
-        .service-icon-wrap {
-            width: 80px;
-            height: 80px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.25rem;
-        }
-
-        .icon-blue {
-            background-color: #dbeafe;
-            color: #2563eb;
-        }
-
-        .icon-amber {
-            background-color: #fef3c7;
-            color: #d97706;
-        }
-
-        .icon-purple {
-            background-color: #ede9fe;
-            color: #5b52f5;
-        }
-
-        .icon-green {
-            background-color: #dcfce7;
-            color: #16a34a;
-        }
-
-        .service-icon-wrap svg {
-            width: 36px;
-            height: 36px;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #0d0d2b;
-            margin-top: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .service-desc {
-            font-size: 0.875rem;
-            color: #6b7280;
-            margin-bottom: 1rem;
-        }
-
-        .service-bullets {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 1.25rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .service-bullets li {
-            display: flex;
-            align-items: center;
-            font-size: 0.82rem;
-            color: #4b5563;
-        }
-
-        .bullet-icon {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background-color: #ede9fe;
-            color: #5b52f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 8px;
-            flex-shrink: 0;
-        }
-
-        .bullet-icon svg {
-            width: 10px;
-            height: 10px;
-        }
-
-        .service-link {
-            font-size: 0.85rem;
-            color: #5b52f5;
-            font-weight: 600;
-            margin-top: 1.25rem;
-            display: inline-block;
-            transition: 0.2s ease;
-        }
-
-        .service-card:hover .service-link {
-            transform: translateX(4px);
-        }
-
-        .grid-2x2 {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        @media (max-width: 768px) {
-            .grid-2x2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Industry Grid Styles */
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 16px;
-        }
-
-        .ind-card {
-            grid-column: span 2;
-            height: 220px;
-            border-radius: 16px;
-            overflow: hidden;
-            position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .ind-card:nth-child(4) { grid-column: 2 / span 2; }
-        .ind-card:nth-child(5) { grid-column: 4 / span 2; }
-
-        @media (max-width: 900px) {
-            .industry-grid { grid-template-columns: 1fr; }
-            .ind-card, .ind-card:nth-child(4), .ind-card:nth-child(5) {
-                grid-column: span 1;
-            }
-        }
-
-        .ind-card:hover {
-            transform: translateY(-6px) scale(1.02);
-            box-shadow: 0 24px 60px rgba(0,0,0,0.25);
-        }
-
-        .ind-card:hover .ind-overlay {
-            background: linear-gradient(180deg, rgba(13,13,43,0.08) 0%, rgba(13,13,43,0.55) 100%);
-        }
-
-        .ind-bg-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .ind-bg-2 { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
-        .ind-bg-3 { background: linear-gradient(135deg, #f7971e 0%, #ffd200 100%); }
-        .ind-bg-4 { background: linear-gradient(135deg, #f953c6 0%, #b91d73 100%); }
-        .ind-bg-5 { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
-
-        .ind-bg, .ind-overlay, .ind-texture {
-            position: absolute;
-            inset: 0;
-        }
-
-        .ind-overlay {
-            background: linear-gradient(180deg, rgba(13,13,43,0.08) 0%, rgba(13,13,43,0.72) 100%);
-            transition: background 0.3s ease;
-        }
-
-        .ind-texture {
-            background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.08) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .ind-content {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 1.5rem;
-        }
-
-        .ind-tag {
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255,255,255,0.65);
-            font-weight: 600;
-            margin-bottom: 6px;
-            display: block;
-        }
-
-        .ind-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            color: #ffffff;
-            margin-bottom: 6px;
-            letter-spacing: -0.01em;
-        }
-
-        .ind-desc {
-            font-size: 0.8rem;
-            color: rgba(255,255,255,0.8);
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        .ind-icon-wrap {
-            position: absolute;
-            top: 1.25rem;
-            right: 1.25rem;
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .ind-icon-wrap svg {
-            width: 18px;
-            height: 18px;
-            stroke: white;
-            fill: none;
-        }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/services.css">
+    <link rel="stylesheet" href="css/process.css">
+    <link rel="stylesheet" href="css/industries.css">
+    <link rel="stylesheet" href="css/results.css">
+    <link rel="stylesheet" href="css/why.css">
 
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
@@ -855,7 +38,7 @@
                 <a href="#case-studies" class="nav-link">Case Studies</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#insights" class="nav-link">Insights</a>
-                <a href="#contact" class="nav-link">Contact</a>
+                <a href="mailto:info@renolsys.com" class="nav-link">Contact</a>
                 <a href="#contact" class="btn btn-primary" style="padding: 10px 24px; font-size: 14px;">Get Started</a>
             </div>
         </div>
@@ -1085,67 +268,67 @@
                 <p>A proven four-step methodology to unlock the full potential of your data.</p>
             </div>
 
-            <div class="grid-4">
-                <div class="process-item">
-                    <div class="process-num">01</div>
-                    <div class="process-content">
-                        <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
-                                <polyline points="14 2 14 8 20 8" />
-                                <circle cx="11.5" cy="14.5" r="2.5" />
-                                <path d="M13.25 16.25 16 19" />
-                            </svg>
-                        </div>
-                        <h3>Data Assessment</h3>
-                        <p>We audit your existing data infrastructure, identify gaps, and define analytics goals.</p>
+            <div class="grid-4 process-grid">
+                <!-- Card 1 -->
+                <div class="process-card process-card-1">
+                    <div class="process-faded-num">01</div>
+                    <div class="process-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" />
+                            <polyline points="14 2 14 8 20 8" />
+                            <circle cx="11.5" cy="14.5" r="2.5" />
+                            <path d="M13.25 16.25 16 19" />
+                        </svg>
                     </div>
+                    <span class="process-step-label">STEP 01</span>
+                    <h3>Data Assessment</h3>
+                    <p>We audit your existing data infrastructure, identify gaps, and define analytics goals.</p>
                 </div>
-                <div class="process-item">
-                    <div class="process-num">02</div>
-                    <div class="process-content">
-                        <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <ellipse cx="12" cy="5" rx="9" ry="3" />
-                                <path d="M3 5V19A9 3 0 0 0 21 19V5" />
-                                <path d="M3 12A9 3 0 0 0 21 12" />
-                            </svg>
-                        </div>
-                        <h3>Data Architecture</h3>
-                        <p>Design scalable data pipelines and warehousing solutions tailored to your needs.</p>
+                <!-- Card 2 -->
+                <div class="process-card process-card-2">
+                    <div class="process-faded-num">02</div>
+                    <div class="process-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M3 5V19A9 3 0 0 0 21 19V5" />
+                            <path d="M3 12A9 3 0 0 0 21 12" />
+                        </svg>
                     </div>
+                    <span class="process-step-label">STEP 02</span>
+                    <h3>Data Architecture</h3>
+                    <p>Design scalable data pipelines and warehousing solutions tailored to your needs.</p>
                 </div>
-                <div class="process-item">
-                    <div class="process-num">03</div>
-                    <div class="process-content">
-                        <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="16 18 22 12 16 6" />
-                                <polyline points="8 6 2 12 8 18" />
-                            </svg>
-                        </div>
-                        <h3>Analytics Implementation</h3>
-                        <p>Build dashboards, models, and automated reporting systems that deliver insights.</p>
+                <!-- Card 3 -->
+                <div class="process-card process-card-3">
+                    <div class="process-faded-num">03</div>
+                    <div class="process-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
                     </div>
+                    <span class="process-step-label">STEP 03</span>
+                    <h3>Analytics Implementation</h3>
+                    <p>Build dashboards, models, and automated reporting systems that deliver insights.</p>
                 </div>
-                <div class="process-item">
-                    <div class="process-num">04</div>
-                    <div class="process-content">
-                        <div class="icon-box">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
-                                <path d="M21 3v5h-5" />
-                                <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
-                                <path d="M8 16H3v5" />
-                            </svg>
-                        </div>
-                        <h3>Continuous Optimization</h3>
-                        <p>Iterate and improve analytics solutions as your business evolves.</p>
+                <!-- Card 4 -->
+                <div class="process-card process-card-4">
+                    <div class="process-faded-num">04</div>
+                    <div class="process-icon-box">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8" />
+                            <path d="M21 3v5h-5" />
+                            <path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16" />
+                            <path d="M8 16H3v5" />
+                        </svg>
                     </div>
+                    <span class="process-step-label">STEP 04</span>
+                    <h3>Continuous Optimization</h3>
+                    <p>Iterate and improve analytics solutions as your business evolves.</p>
                 </div>
             </div>
         </div>
@@ -1172,8 +355,10 @@
                         <p class="ind-desc">Patient outcomes, clinical analytics, and compliance dashboards.</p>
                     </div>
                     <div class="ind-icon-wrap">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <path
+                                d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
                         </svg>
                     </div>
                 </div>
@@ -1188,7 +373,8 @@
                         <p class="ind-desc">Property valuations, market forecasting, and portfolio analytics.</p>
                     </div>
                     <div class="ind-icon-wrap">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <rect width="16" height="20" x="4" y="2" rx="2" ry="2" />
                             <path d="M9 22v-4h6v4" />
                             <path d="M8 6h.01" />
@@ -1214,7 +400,8 @@
                         <p class="ind-desc">Risk modeling, fraud detection, and regulatory reporting.</p>
                     </div>
                     <div class="ind-icon-wrap">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <rect width="20" height="12" x="2" y="6" rx="2" />
                             <circle cx="12" cy="12" r="2" />
                             <path d="M6 12h.01" />
@@ -1233,7 +420,8 @@
                         <p class="ind-desc">Demand forecasting, customer segmentation, and inventory optimization.</p>
                     </div>
                     <div class="ind-icon-wrap">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
                             <path d="M3 6h18" />
                             <path d="M16 10a4 4 0 0 1-8 0" />
@@ -1251,7 +439,8 @@
                         <p class="ind-desc">Product analytics, churn prediction, and growth metrics.</p>
                     </div>
                     <div class="ind-icon-wrap">
-                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round">
                             <polyline points="16 18 22 12 16 6" />
                             <polyline points="8 6 2 12 8 18" />
                         </svg>
@@ -1298,57 +487,88 @@
     </section>
 
     <!-- Section 7: Why Us -->
-    <section id="insights" class="section bg-white">
-        <div class="container">
-            <div class="section-header">
-                <div class="pill pill-accent">WHY RENOLSYS</div>
+    <section id="insights" class="why-renolsys-section">
+        <!-- Layer 1: Dot Grid -->
+        <div class="why-layer-1"></div>
+        <!-- Layer 2: Soft Mesh Orbs -->
+        <div class="why-layer-2"></div>
+        <!-- Layer 3: 5 Data Stream Lines -->
+        <div class="data-stream stream-1"></div>
+        <div class="data-stream stream-2"></div>
+        <div class="data-stream stream-3"></div>
+        <div class="data-stream stream-4"></div>
+        <div class="data-stream stream-5"></div>
+
+        <div class="container why-container">
+            <!-- Left Column -->
+            <div class="why-left">
+                <div class="insights-pill">
+                    <div class="blink-dot"></div>
+                    WHY RENOLSYS
+                </div>
                 <h2>Your Competitive Edge</h2>
-                <p>We combine deep domain expertise with modern data engineering to deliver measurable ROI.</p>
+                <p class="insights-subtitle">We combine deep domain expertise with modern data engineering to deliver
+                    measurable ROI.</p>
+
+                <div class="why-features-grid">
+                    <div class="why-feature-card">
+                        <div class="icon-box">⚡</div>
+                        <div class="feature-text">
+                            <h4>10x Faster Insights</h4>
+                            <p>Raw data to decisions in hours not weeks</p>
+                        </div>
+                    </div>
+                    <div class="why-feature-card">
+                        <div class="icon-box">📊</div>
+                        <div class="feature-text">
+                            <h4>98% Data-Driven</h4>
+                            <p>Evidence-based strategic planning</p>
+                        </div>
+                    </div>
+                    <div class="why-feature-card">
+                        <div class="icon-box">☁️</div>
+                        <div class="feature-text">
+                            <h4>Scalable Infra</h4>
+                            <p>Architecture that grows with you</p>
+                        </div>
+                    </div>
+                    <div class="why-feature-card">
+                        <div class="icon-box">👥</div>
+                        <div class="feature-text">
+                            <h4>50+ Expert Talent</h4>
+                            <p>Vetted professionals on demand</p>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid-4">
-                <div class="why-col">
-                    <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-                        </svg>
+            <!-- Right Column -->
+            <div class="why-right">
+                <div class="orbital-wrapper">
+                    <div class="orbital-ring ring-1">
+                        <div class="orbiting-dot dot-1"></div>
                     </div>
-                    <h3>Faster Insights</h3>
-                    <p>Go from raw data to actionable insights in hours, not weeks.</p>
-                </div>
-                <div class="why-col">
-                    <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                            <polyline points="16 7 22 7 22 13" />
-                        </svg>
+                    <div class="orbital-ring ring-2">
+                        <div class="orbiting-dot dot-2"></div>
                     </div>
-                    <h3>Data-Driven Decisions</h3>
-                    <p>Replace gut feelings with evidence-based strategic planning.</p>
-                </div>
-                <div class="why-col">
-                    <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <ellipse cx="12" cy="5" rx="9" ry="3" />
-                            <path d="M3 5V19A9 3 0 0 0 21 19V5" />
-                            <path d="M3 12A9 3 0 0 0 21 12" />
-                        </svg>
+                    <div class="orbital-ring ring-3">
+                        <div class="orbiting-dot dot-3"></div>
                     </div>
-                    <h3>Scalable Infrastructure</h3>
-                    <p>Analytics architecture that grows with your business.</p>
-                </div>
-                <div class="why-col">
-                    <div class="icon-box">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                        </svg>
+
+                    <div class="pulsing-core">🧠</div>
+
+                    <div class="floating-stat stat-1">
+                        <div class="stat-num">42%</div>
+                        <div class="stat-text">Revenue Increase</div>
                     </div>
-                    <h3>Expert Talent Access</h3>
-                    <p>Tap into a network of vetted data professionals on demand.</p>
+                    <div class="floating-stat stat-2">
+                        <div class="stat-num">3x</div>
+                        <div class="stat-text">Faster Reporting</div>
+                    </div>
+                    <div class="floating-stat stat-3">
+                        <div class="stat-num">60%</div>
+                        <div class="stat-text">Cost Reduction</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1365,6 +585,7 @@
                     </a>
                     <p class="tagline">Transforming businesses through intelligent data solutions, advanced analytics,
                         and AI-driven consulting.</p>
+                    <a href="mailto:info@renolsys.com" class="footer-email">info@renolsys.com</a>
                 </div>
                 <div class="footer-col">
                     <h4>Services</h4>
@@ -1381,7 +602,7 @@
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Case Studies</a></li>
                         <li><a href="#">Insights</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="mailto:info@renolsys.com">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1405,171 +626,9 @@
         </div>
     </footer>
 
-    <script>
-        // GSAP Animations
-        gsap.registerPlugin(ScrollTrigger);
-
-        // 1. Navbar Scroll Effect
-        const navbar = document.querySelector('.navbar');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.05)';
-            } else {
-                navbar.style.boxShadow = 'none';
-            }
-        });
-
-        // 2. Hero Entrance
-        const heroTimeline = gsap.timeline();
-
-        // Ensure initial hidden state
-        gsap.set('.hero-anim', { y: 40, opacity: 0 });
-
-        heroTimeline
-            .to('.pill.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "+=0.2")
-            .to('h1.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6")
-            .to('p.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6")
-            .to('.hero-btns.hero-anim', { y: 0, opacity: 1, duration: 0.8, ease: 'power3.out' }, "-=0.6");
-
-        // 3. Scroll Reveals for Sections
-        const animateSection = (sectionId, itemsSelector) => {
-            const section = document.querySelector(sectionId);
-            if (!section) return;
-
-            const header = section.querySelector('.section-header');
-            const pill = section.querySelector('.pill');
-            const items = section.querySelectorAll(itemsSelector);
-
-            // Pill Animation
-            if (pill) {
-                gsap.fromTo(pill,
-                    { scale: 0.8, opacity: 0 },
-                    {
-                        scale: 1,
-                        opacity: 1,
-                        duration: 0.6,
-                        ease: 'back.out(1.7)',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 85%"
-                        }
-                    }
-                );
-            }
-
-            // Headers Animation
-            if (header) {
-                const headerElements = header.querySelectorAll('h2, p');
-                gsap.fromTo(headerElements,
-                    { y: 30, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.8,
-                        stagger: 0.1,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 85%"
-                        }
-                    }
-                );
-            }
-
-            // Cards/Items Animation
-            if (items.length > 0) {
-                gsap.fromTo(items,
-                    { y: 50, opacity: 0 },
-                    {
-                        y: 0,
-                        opacity: 1,
-                        duration: 0.8,
-                        stagger: 0.15,
-                        ease: 'power3.out',
-                        scrollTrigger: {
-                            trigger: section,
-                            start: "top 85%"
-                        }
-                    }
-                );
-            }
-        };
-
-        animateSection('#services', '.card');
-        animateSection('#about', '.process-item');
-        animateSection('#industries', '.card');
-        animateSection('#case-studies', '.case-card');
-        animateSection('#insights', '.why-col');
-
-        // 4. Smooth Number Counters (Stats Bar)
-        const statsSection = document.querySelector('.stats-wrap');
-        const statNums = document.querySelectorAll('.stat-num');
-
-        if (statsSection && statNums.length > 0) {
-            ScrollTrigger.create({
-                trigger: statsSection,
-                start: "top 90%",
-                once: true,
-                onEnter: () => {
-                    statNums.forEach(stat => {
-                        const originalText = stat.innerText;
-                        const targetNum = parseInt(originalText.replace(/[^0-9]/g, ''));
-                        const suffix = originalText.replace(/[0-9]/g, ''); // '+' or '%'
-
-                        gsap.to(stat, {
-                            innerText: targetNum,
-                            duration: 2,
-                            ease: 'power2.out',
-                            snap: { innerText: 1 },
-                            onUpdate: function () {
-                                stat.innerText = Math.round(this.targets()[0].innerText) + suffix;
-                            }
-                        });
-                    });
-                }
-            });
-        }
-
-        // 5. Initialize ParticlesJS
-        particlesJS("particles-js", {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: "#5b52f5" },
-                shape: { type: "circle" },
-                opacity: { value: 0.65, random: true },
-                size: { value: 3, random: true },
-                line_linked: {
-                    enable: true,
-                    distance: 150,
-                    color: "#5b52f5",
-                    opacity: 0.45,
-                    width: 1
-                },
-                move: {
-                    enable: true,
-                    speed: 2,
-                    direction: "none",
-                    random: true,
-                    straight: false,
-                    out_mode: "out",
-                    bounce: false
-                }
-            },
-            interactivity: {
-                detect_on: "canvas",
-                events: {
-                    onhover: { enable: true, mode: "grab" },
-                    onclick: { enable: true, mode: "push" },
-                    resize: true
-                },
-                modes: {
-                    grab: { distance: 140, line_linked: { opacity: 1.0 } },
-                    push: { particles_nb: 4 }
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+    <script src="js/particles.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/counters.js"></script>
 </body>
 
 </html>

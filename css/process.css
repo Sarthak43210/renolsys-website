@@ -1,0 +1,157 @@
+/* Process Section */
+.process-grid {
+    gap: 16px;
+}
+
+.process-card {
+    border-radius: 16px;
+    padding: 1.75rem 1.5rem;
+    box-shadow: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    position: relative;
+}
+
+.process-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+.process-card-1 {
+    background: linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%);
+    border: 1px solid #c7d2fe;
+}
+
+.process-card-2 {
+    background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    border: 1px solid #bbf7d0;
+}
+
+.process-card-3 {
+    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    border: 1px solid #fed7aa;
+}
+
+.process-card-4 {
+    background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+    border: 1px solid #f5d0fe;
+}
+
+.process-faded-num {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1;
+    font-family: Georgia, serif;
+    opacity: 0.12;
+}
+
+.process-card-1 .process-faded-num {
+    color: #4f46e5;
+}
+
+.process-card-2 .process-faded-num {
+    color: #16a34a;
+}
+
+.process-card-3 .process-faded-num {
+    color: #ea580c;
+}
+
+.process-card-4 .process-faded-num {
+    color: #9333ea;
+}
+
+.process-icon-box {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.process-icon-box svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+}
+
+.process-card-1 .process-icon-box {
+    background: rgba(79, 70, 229, 0.12);
+    border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.process-card-1 .process-icon-box svg {
+    stroke: #4f46e5;
+}
+
+.process-card-2 .process-icon-box {
+    background: rgba(22, 163, 74, 0.12);
+    border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.process-card-2 .process-icon-box svg {
+    stroke: #16a34a;
+}
+
+.process-card-3 .process-icon-box {
+    background: rgba(234, 88, 12, 0.12);
+    border: 1px solid rgba(234, 88, 12, 0.2);
+}
+
+.process-card-3 .process-icon-box svg {
+    stroke: #ea580c;
+}
+
+.process-card-4 .process-icon-box {
+    background: rgba(147, 51, 234, 0.12);
+    border: 1px solid rgba(147, 51, 234, 0.2);
+}
+
+.process-card-4 .process-icon-box svg {
+    stroke: #9333ea;
+}
+
+.process-step-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.process-card-1 .process-step-label {
+    color: #4f46e5;
+}
+
+.process-card-2 .process-step-label {
+    color: #16a34a;
+}
+
+.process-card-3 .process-step-label {
+    color: #ea580c;
+}
+
+.process-card-4 .process-step-label {
+    color: #9333ea;
+}
+
+.process-card h3 {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #0d0d2b;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.process-card p {
+    font-size: 0.85rem;
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}

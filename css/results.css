@@ -1,0 +1,46 @@
+/* Case Studies */
+.case-card {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px 32px;
+    transition: var(--transition);
+}
+
+.case-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+}
+
+.case-pill {
+    display: inline-block;
+    background-color: var(--accent-light);
+    color: var(--accent);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+}
+
+.case-card .stat-num {
+    font-size: 56px;
+    margin-bottom: 16px;
+}
+
+.case-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+
+.case-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}

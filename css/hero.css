@@ -1,0 +1,74 @@
+.hero {
+    padding: 160px 0 100px;
+    text-align: center;
+    position: relative;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 64px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 auto 24px;
+    max-width: 900px;
+}
+
+.hero p {
+    font-size: 20px;
+    color: var(--text-gray);
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.hero-btns {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+/* Stats Bar */
+.stats-wrap {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 40px;
+    margin-top: -30px;
+    background: transparent;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-num {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 8px;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
